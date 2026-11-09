@@ -1,4 +1,20 @@
-import { Gift, Users, Swords, GraduationCap } from "lucide-react";
+import {
+  TrendingUp,
+  Monitor,
+  BellRing,
+  Target,
+  Gamepad2,
+  BarChart2,
+  Gift,
+  Rocket,
+  Mic,
+  CalendarDays,
+  Trophy,
+  Sparkles,
+  Coins,
+  ShieldCheck,
+  CheckCircle2,
+} from "lucide-react";
 
 export const WHATSAPP_URL =
   "https://wa.me/51916753556?text=Hola%20CRBX%2C%20quiero%20unirme%20a%20la%20agencia%20de%20TikTok%20LIVE";
@@ -13,6 +29,7 @@ export const navItems = [
   { label: "Monetización", to: "/monetizacion" },
   { label: "Proceso", to: "/proceso" },
   { label: "Preguntas", to: "/preguntas" },
+  { label: "Academia", to: "/cursos" },
   { label: "Contacto", to: "/contacto" },
 ] as const;
 
@@ -25,28 +42,82 @@ export const stats = [
 
 export const beneficios = [
   {
+    icono: TrendingUp,
+    titulo: "Promoción y pauta publicitaria",
+    texto:
+      "Gestionamos campañas promocionales directamente desde las herramientas oficiales disponibles de TikTok LIVE Backstage para impulsar tus directos y aumentar su exposición ante nuevas audiencias.",
+  },
+  {
+    icono: Monitor,
+    titulo: "Monitoreo en tiempo real, detrás de la pantalla",
+    texto:
+      "Mientras tú estás transmitiendo, nosotros estaremos detrás de la pantalla monitoreando tu LIVE en tiempo real, observando su evolución y analizando las métricas disponibles. Nuestro objetivo es detectar cuándo la audiencia disminuye, la interacción cae o la transmisión empieza a perder fuerza, para identificar qué está fallando y actuar a tiempo.",
+  },
+  {
+    icono: BellRing,
+    titulo: "Alertas e indicaciones al instante",
+    texto:
+      "Si detectamos que tu transmisión está perdiendo espectadores, que la interacción está bajando o que necesitas cambiar la dinámica, te avisaremos en ese mismo momento mediante nuestro canal privado de comunicación. Así podrás reaccionar mientras el LIVE sigue activo, sin tener que esperar hasta terminar para conocer los problemas que identificamos.",
+  },
+  {
+    icono: Target,
+    titulo: "Guiones, speech y estrategias en tiempo real",
+    texto:
+      "No solo te diremos qué está fallando. También te enviaremos frases, líneas de discurso, ideas y dinámicas preparadas para que puedas utilizarlas durante tu transmisión. Si necesitas recuperar la atención de tus espectadores, incentivar la conversación o darle un nuevo impulso a tu LIVE, tendrás indicaciones concretas para saber qué hacer y qué decir en cada momento.",
+  },
+  {
+    icono: Gamepad2,
+    titulo: "Beneficios para quienes transmiten videojuegos",
+    texto:
+      "Si haces directos jugando videojuegos, también podrás recibir apoyo y orientación especializada, incluso si no muestras tu rostro y únicamente transmites la pantalla del juego. Te ayudaremos a mejorar la interacción con tu audiencia, crear dinámicas y retos, aprovechar los momentos interesantes de tus partidas y mantener activo el chat.\n\nAdemás, podremos prepararte frases, comentarios, ideas y estrategias adaptadas al videojuego que transmites, para ayudarte a mantener el interés de los espectadores, mejorar el ritmo de tus directos y desarrollar una comunidad de seguidores. También analizaremos las métricas disponibles para identificar oportunidades de mejora y orientarte sobre cómo hacer tus transmisiones de gaming más entretenidas y participativas, sin necesidad de aparecer frente a la cámara.",
+  },
+  {
+    icono: BarChart2,
+    titulo: "Análisis y dirección de tu LIVE",
+    texto:
+      "Analizamos el comportamiento de tu audiencia, la retención y los resultados disponibles para identificar oportunidades de mejora y orientarte sobre las decisiones que pueden ayudar a mantener una transmisión más dinámica.",
+  },
+  {
     icono: Gift,
-    titulo: "Acceso al programa de monetización",
+    titulo: "Estrategias para recibir más regalos",
     texto:
-      "Te vinculamos al programa de incentivos de TikTok LIVE para que tus regalos y diamantes se conviertan en ingresos reales.",
+      "Te orientamos sobre dinámicas, retos, objetivos y formas de interacción que pueden motivar a tu audiencia a participar y apoyarte durante tus transmisiones.",
   },
   {
-    icono: Users,
-    titulo: "Acompañamiento personalizado",
+    icono: Rocket,
+    titulo: "Estrategias para crecer más rápido",
     texto:
-      "Un manager de la agencia revisa tus métricas, te ayuda con tu contenido y resuelve tus dudas por WhatsApp o llamada.",
+      "Te ayudamos a identificar oportunidades de crecimiento, mejorar tu contenido y desarrollar una estrategia adaptada a tu estilo para atraer nuevos espectadores y fidelizar a quienes ya te siguen.",
   },
   {
-    icono: Swords,
-    titulo: "Batallas y eventos",
+    icono: Mic,
+    titulo: "Mejora de tu contenido y desempeño",
     texto:
-      "Participas en batallas PK y eventos de la comunidad que aumentan tu visibilidad y tus diamantes.",
+      "Te damos recomendaciones para mejorar tu comunicación, mantener conversaciones, evitar silencios prolongados y conseguir que tus transmisiones sean más entretenidas y dinámicas.",
   },
   {
-    icono: GraduationCap,
-    titulo: "Capacitación continua",
+    icono: CalendarDays,
+    titulo: "Planificación y constancia",
     texto:
-      "Aprendes dinámicas de live, horarios que funcionan en Perú y LATAM, y buenas prácticas para crecer sin infracciones.",
+      "Te ayudamos a organizar tus horarios, establecer objetivos y desarrollar hábitos de transmisión que te permitan trabajar de manera más estratégica y profesional.",
+  },
+  {
+    icono: Trophy,
+    titulo: "Acompañamiento y asesoría personalizada",
+    texto:
+      "No tendrás que aprenderlo todo por tu cuenta. Contarás con orientación para resolver dudas, mejorar tus transmisiones y avanzar con una estrategia más clara.",
+  },
+  {
+    icono: Sparkles,
+    titulo: "Oportunidades de desarrollo",
+    texto:
+      "Según tu rendimiento y las oportunidades disponibles, podrás recibir orientación sobre eventos, campañas, retos y programas para creadores que TikTok habilite para tu perfil.",
+  },
+  {
+    icono: Coins,
+    titulo: "Servicios gratuitos y sin descuentos de tus ingresos",
+    texto:
+      "Todos los servicios de gestión, orientación, análisis, promoción y acompañamiento incluidos en nuestra propuesta son completamente gratuitos para ti. No tienes que pagar absolutamente nada por unirte a nuestra agencia ni por recibir estos servicios, y tampoco te descontamos ninguna comisión de tus ingresos por pertenecer a ella. Todo el dinero que generes en tus transmisiones y que TikTok te pague será íntegramente tuyo, sin ningún descuento por parte de nuestra agencia.",
   },
 ];
 

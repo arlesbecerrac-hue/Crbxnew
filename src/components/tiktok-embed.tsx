@@ -10,14 +10,19 @@ interface TikTokPlayerProps {
 /**
  * Componente oficial de TikTok Player según la documentación oficial:
  * https://developers.tiktok.com/docs/en/embed-player
- * 
+ *
  * Cumple estrictamente con:
  * - Reproducción automática al entrar en pantalla (IntersectionObserver)
  * - Pausa / descarga al salir de pantalla para que los videos NO se crucen ("sin que se crucen")
  * - Sin botones manuales ni controles delanteros invasivos
  * - Soporte para fondo completo (Hero) o formato vertical 9:16 nativo de TikTok
  */
-export function TikTokPlayer({ videoId, title = "TikTok LIVE", aspect = "vertical", className = "" }: TikTokPlayerProps) {
+export function TikTokPlayer({
+  videoId,
+  title = "TikTok LIVE",
+  aspect = "vertical",
+  className = "",
+}: TikTokPlayerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -34,7 +39,7 @@ export function TikTokPlayer({ videoId, title = "TikTok LIVE", aspect = "vertica
       },
       {
         threshold: 0.35,
-      }
+      },
     );
 
     observer.observe(el);
@@ -47,8 +52,8 @@ export function TikTokPlayer({ videoId, title = "TikTok LIVE", aspect = "vertica
     aspect === "vertical"
       ? "aspect-[9/16] w-full max-w-[340px]"
       : aspect === "horizontal"
-      ? "aspect-video w-full"
-      : "w-full h-full absolute inset-0";
+        ? "aspect-video w-full"
+        : "w-full h-full absolute inset-0";
 
   // URL del reproductor según especificación oficial de TikTok Developers
   const iframeSrc = isInView

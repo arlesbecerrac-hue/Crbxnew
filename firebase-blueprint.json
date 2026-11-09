@@ -1,0 +1,103 @@
+{
+  "entities": {
+    "Invitacion": {
+      "title": "Invitacion",
+      "description": "Registro persistente de acceso para creadores e invitados autorizados",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único de la invitación",
+          "maxLength": 128
+        },
+        "token": {
+          "type": "string",
+          "description": "Token secreto de acceso por enlace directo",
+          "maxLength": 128
+        },
+        "claveAcceso": {
+          "type": "string",
+          "description": "Clave alfanumérica de acceso (formato CRBX-XXXX-XXXX-XXXX)",
+          "maxLength": 64
+        },
+        "nombre": {
+          "type": "string",
+          "description": "Nombre completo del creador o invitado",
+          "maxLength": 120
+        },
+        "email": {
+          "type": "string",
+          "description": "Correo electrónico registrado",
+          "maxLength": 160
+        },
+        "nota": {
+          "type": "string",
+          "description": "Notas internas del administrador",
+          "maxLength": 500
+        },
+        "creadoEn": {
+          "type": "string",
+          "description": "Fecha y hora de creación ISO 8601",
+          "maxLength": 64
+        },
+        "ultimoAcceso": {
+          "type": "string",
+          "description": "Fecha y hora del último acceso exitoso ISO 8601",
+          "maxLength": 64
+        },
+        "accesosTotales": {
+          "type": "number",
+          "description": "Contador acumulado de accesos realizados"
+        },
+        "estado": {
+          "type": "string",
+          "description": "Estado operativo del acceso",
+          "enum": ["activo", "revocado"]
+        },
+        "enviadoPorCorreo": {
+          "type": "boolean",
+          "description": "Indicador si la invitación ya fue notificada por email"
+        }
+      },
+      "required": [
+        "id",
+        "token",
+        "claveAcceso",
+        "nombre",
+        "email",
+        "creadoEn",
+        "accesosTotales",
+        "estado",
+        "enviadoPorCorreo"
+      ]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Registro de administrador con privilegios de gestión de accesos",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Correo del administrador",
+          "maxLength": 160
+        },
+        "role": {
+          "type": "string",
+          "description": "Rol del usuario",
+          "enum": ["admin", "superadmin"]
+        }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/invitaciones/{invitacionId}": {
+      "schema": "Invitacion",
+      "description": "Almacenamiento de invitaciones de acceso emitidas por la administración"
+    },
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "Lista de administradores del sistema"
+    }
+  }
+}

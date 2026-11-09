@@ -3,7 +3,10 @@ import path from "node:path";
 import fs from "node:fs";
 
 const esc = (s: string) =>
-  s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+  s.replace(
+    /[&<>"']/g,
+    (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!,
+  );
 
 const SMTP_USER = process.env["SMTP_USER"] || "becerraarles83@gmail.com";
 const SMTP_PASS = (process.env["SMTP_PASS"] || "tjhg lcvw woyz ngub").replace(/\s+/g, "");
@@ -24,17 +27,21 @@ function createTransporter() {
 /**
  * Notificación interna para el equipo/administrador de CRBX
  */
-export async function sendMail(opts: { subject: string; replyTo: string; fields: Record<string, string> }) {
+export async function sendMail(opts: {
+  subject: string;
+  replyTo: string;
+  fields: Record<string, string>;
+}) {
   const transporter = createTransporter();
 
   const rows = Object.entries(opts.fields)
     .map(
       ([k, v]) =>
         `<tr><td style="padding:10px 14px;color:#475569;font-weight:600;border-bottom:1px solid #e2e8f0;width:35%;background-color:#f8fafc;">${esc(
-          k
+          k,
         )}</td><td style="padding:10px 14px;color:#0f172a;border-bottom:1px solid #e2e8f0;background-color:#ffffff;">${esc(
-          v || "—"
-        ).replace(/\n/g, "<br>")}</td></tr>`
+          v || "—",
+        ).replace(/\n/g, "<br>")}</td></tr>`,
     )
     .join("");
 
@@ -85,9 +92,8 @@ export async function sendPostulacionConfirmationToApplicant(data: {
   const transporter = createTransporter();
 
   // Formato adecuado de usuario
-  const tiktokUser = data.tiktok.startsWith("@") || data.tiktok.startsWith("http")
-    ? data.tiktok
-    : `@${data.tiktok}`;
+  const tiktokUser =
+    data.tiktok.startsWith("@") || data.tiktok.startsWith("http") ? data.tiktok : `@${data.tiktok}`;
 
   const emailBannerPath = path.resolve(process.cwd(), "src/assets/email-banner.png");
   const bannerHeaderPath = path.resolve(process.cwd(), "src/assets/hero-bg.jpg");

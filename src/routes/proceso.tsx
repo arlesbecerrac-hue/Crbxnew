@@ -10,9 +10,15 @@ export const Route = createFileRoute("/proceso")({
   head: () => ({
     meta: [
       { title: "Proceso y requisitos — CRBX Agencia de TikTok LIVE" },
-      { name: "description", content: "Los 4 pasos para unirte a CRBX y los requisitos para postular." },
+      {
+        name: "description",
+        content: "Los 4 pasos para unirte a CRBX y los requisitos para postular.",
+      },
       { property: "og:title", content: "Proceso y requisitos — CRBX Agencia de TikTok LIVE" },
-      { property: "og:description", content: "Los 4 pasos para unirte a CRBX y los requisitos para postular." },
+      {
+        property: "og:description",
+        content: "Los 4 pasos para unirte a CRBX y los requisitos para postular.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -26,22 +32,14 @@ function ProcesoPage() {
       <PageBanner label="Proceso y requisitos" />
       <section id="proceso" className="border-t border-border bg-card">
         <div className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24">
-          <p className="text-sm font-semibold uppercase tracking-widest text-live-cyan">
-            Proceso
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            Cómo empezar
-          </h2>
+          <p className="text-sm font-semibold uppercase tracking-widest text-live-cyan">Proceso</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Cómo empezar</h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {pasos.map((p) => (
               <div key={p.numero} className="rounded-2xl border border-border bg-background p-6">
-                <span className="font-display text-sm font-bold text-live-pink">
-                  {p.numero}
-                </span>
+                <span className="font-display text-sm font-bold text-live-pink">{p.numero}</span>
                 <h3 className="mt-2 text-lg font-semibold">{p.titulo}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {p.texto}
-                </p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.texto}</p>
               </div>
             ))}
           </div>
@@ -59,8 +57,8 @@ function ProcesoPage() {
               Lo que necesitas para postular
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Buscamos personas con ganas de transmitir en serio. Si cumples
-              estos puntos, puedes postular hoy.
+              Buscamos personas con ganas de transmitir en serio. Si cumples estos puntos, puedes
+              postular hoy.
             </p>
           </div>
           <ul className="space-y-4">

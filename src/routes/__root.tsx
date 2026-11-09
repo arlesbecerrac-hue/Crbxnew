@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -135,15 +136,24 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isPrivatePortal =
+    pathname.includes("vault-crbx-secure-admin") ||
+    pathname.includes("academia-privada") ||
+    pathname.includes("cursos") ||
+    (typeof window !== "undefined" &&
+      (window.location.pathname.includes("vault-crbx-secure-admin") ||
+        window.location.pathname.includes("academia-privada") ||
+        window.location.pathname.includes("cursos")));
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen bg-background text-foreground">
-        <SiteHeader />
+      <div className="min-h-screen bg-background text-foreground font-sans">
+        {!isPrivatePortal && <SiteHeader />}
         <main>
           <Outlet />
         </main>
-        <SiteFooter />
+        {!isPrivatePortal && <SiteFooter />}
       </div>
       <Toaster richColors position="top-center" />
     </QueryClientProvider>

@@ -1,6 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { MessageCircle, Phone, ArrowRight, ShieldCheck, Zap, Trophy, CheckCircle2 } from "lucide-react";
-import crbxLogo from "@/assets/crbx-logo.png";
+import {
+  MessageCircle,
+  Phone,
+  ArrowRight,
+  ShieldCheck,
+  Zap,
+  Trophy,
+  CheckCircle2,
+} from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import creatorLive from "@/assets/creator-live.jpg";
 import liveGifts from "@/assets/live-gifts.jpg";
@@ -9,13 +16,31 @@ import { CtaBand } from "@/components/cta-band";
 import { TikTokPlayer } from "@/components/tiktok-embed";
 
 const destacados = [
-  { to: "/nosotros", titulo: "Nosotros", texto: "Agencia peruana de Carbe Global Corp SAC para creadores de LATAM.", img: creatorLive },
-  { to: "/monetizacion", titulo: "Monetización", texto: "Regalos, diamantes e incentivos que se convierten en ingresos.", img: liveGifts },
+  {
+    to: "/nosotros",
+    titulo: "Nosotros",
+    texto: "Agencia peruana de Carbe Global Corp SAC para creadores de LATAM.",
+    img: creatorLive,
+  },
+  {
+    to: "/monetizacion",
+    titulo: "Monetización",
+    texto: "Regalos, diamantes e incentivos que se convierten en ingresos.",
+    img: liveGifts,
+  },
 ] as const;
 
 const accesos = [
-  { to: "/beneficios", titulo: "Beneficios", texto: "Acompañamiento, batallas PK y capacitación." },
-  { to: "/proceso", titulo: "Proceso y requisitos", texto: "Cuatro pasos para empezar a transmitir." },
+  {
+    to: "/beneficios",
+    titulo: "Beneficios",
+    texto: "Promoción oficial, monitoreo en vivo, guiones, gaming y 0% comisiones.",
+  },
+  {
+    to: "/proceso",
+    titulo: "Proceso y requisitos",
+    texto: "Cuatro pasos para empezar a transmitir.",
+  },
   { to: "/preguntas", titulo: "Preguntas frecuentes", texto: "Costos, pagos, permanencia y más." },
   { to: "/postular", titulo: "Postular", texto: "Envía tu perfil y te respondemos en 48 h." },
 ] as const;
@@ -24,17 +49,20 @@ const pilares = [
   {
     icon: ShieldCheck,
     titulo: "Cero comisiones a creadores",
-    texto: "TikTok nos remunera directamente por tu desarrollo. El 100% de tus diamantes y regalos es tuyo.",
+    texto:
+      "TikTok nos remunera directamente por tu desarrollo. El 100% de tus diamantes y regalos es tuyo.",
   },
   {
     icon: Zap,
     titulo: "Soporte y desbaneos rápidos",
-    texto: "Canal directo con moderación oficial de TikTok LIVE para apelar advertencias y solucionar problemas técnicos.",
+    texto:
+      "Canal directo con moderación oficial de TikTok LIVE para apelar advertencias y solucionar problemas técnicos.",
   },
   {
     icon: Trophy,
     titulo: "Batallas PK y torneos",
-    texto: "Organización de eventos inter-agencias y batallas oficiales para maximizar tu audiencia y ranking.",
+    texto:
+      "Organización de eventos inter-agencias y batallas oficiales para maximizar tu audiencia y ranking.",
   },
 ] as const;
 
@@ -50,11 +78,7 @@ const requisitosRapidos = [
  * Diseño limpio sin píldoras, sin subtítulos genéricos y sin textos duplicados
  */
 function BatallasTikTokSection() {
-  const videosBatallas = [
-    "7616572978247093524",
-    "7460034055338315013",
-    "7586519546278776085",
-  ];
+  const videosBatallas = ["7616572978247093524", "7460034055338315013", "7586519546278776085"];
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-12">
@@ -118,7 +142,9 @@ function PilaresSection() {
 
       {/* Requisitos rápidos en diseño limpio */}
       <div className="mt-8 rounded-3xl border border-border bg-card/60 p-8 backdrop-blur-sm">
-        <h4 className="font-display text-lg font-bold tracking-tight">Requisitos básicos para unirte</h4>
+        <h4 className="font-display text-lg font-bold tracking-tight">
+          Requisitos básicos para unirte
+        </h4>
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           {requisitosRapidos.map((req) => (
             <div key={req} className="flex items-start gap-3">
@@ -137,13 +163,25 @@ function HomeLinks() {
     <section className="mx-auto max-w-6xl px-6 py-12">
       <div className="grid gap-6 md:grid-cols-2">
         {destacados.map((d) => (
-          <Link key={d.to} to={d.to} className="group overflow-hidden rounded-3xl border border-border bg-card transition-shadow hover:shadow-xl hover:shadow-black/5">
-            <img src={d.img} alt={d.titulo} loading="lazy" width={1024} height={1024} className="aspect-[16/10] w-full object-cover" />
+          <Link
+            key={d.to}
+            to={d.to}
+            className="group overflow-hidden rounded-3xl border border-border bg-card transition-shadow hover:shadow-xl hover:shadow-black/5"
+          >
+            <img
+              src={d.img}
+              alt={d.titulo}
+              loading="lazy"
+              width={1024}
+              height={1024}
+              className="aspect-[16/10] w-full object-cover"
+            />
             <div className="p-7">
               <h2 className="text-2xl font-bold tracking-tight">{d.titulo}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{d.texto}</p>
               <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-live-pink">
-                Ver más <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                Ver más{" "}
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </span>
             </div>
           </Link>
@@ -151,7 +189,11 @@ function HomeLinks() {
       </div>
       <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {accesos.map((a) => (
-          <Link key={a.to} to={a.to} className="group rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg hover:shadow-black/5">
+          <Link
+            key={a.to}
+            to={a.to}
+            className="group rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-lg hover:shadow-black/5"
+          >
             <h3 className="font-semibold">{a.titulo}</h3>
             <p className="mt-2 text-sm text-muted-foreground">{a.texto}</p>
             <ArrowRight className="mt-4 size-4 text-live-cyan transition-transform group-hover:translate-x-1" />
@@ -198,23 +240,13 @@ function Index() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
         <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-16 text-center sm:pt-20">
-          <div className="mx-auto mb-10 flex justify-center">
-            <img
-              src={crbxLogo}
-              alt="CRBX — Agencia de TikTok LIVE"
-              className="h-36 sm:h-44 w-auto object-contain drop-shadow-xl transition-transform duration-300 hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
-          </div>
           <h1 className="mx-auto max-w-2xl text-balance text-4xl font-bold leading-tight tracking-tight sm:text-6xl text-foreground">
-            Tu talento en vivo,{" "}
-            <span className="text-live-cyan">convertido </span>
+            Tu talento en vivo, <span className="text-live-cyan">convertido </span>
             <span className="text-live-pink">en ingresos</span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-pretty text-lg text-muted-foreground leading-relaxed">
-            Somos una agencia de TikTok LIVE con sede en Perú. Ayudamos a
-            creadores de Latinoamérica a crecer, profesionalizar sus
-            transmisiones y monetizar su contenido.
+            Somos una agencia de TikTok LIVE con sede en Perú. Ayudamos a creadores de Latinoamérica
+            a crecer, profesionalizar sus transmisiones y monetizar su contenido.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a

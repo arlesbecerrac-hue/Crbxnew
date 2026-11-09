@@ -42,20 +42,47 @@ export function Field({
   );
 }
 
-export function Area({ label, name, required, placeholder }: { label: string; name: string; required?: boolean; placeholder?: string }) {
+export function Area({
+  label,
+  name,
+  required,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  required?: boolean;
+  placeholder?: string;
+}) {
   return (
     <label className="block text-sm font-medium">
       {label}
-      <textarea name={name} required={required} maxLength={2000} rows={5} placeholder={placeholder} className={cls} />
+      <textarea
+        name={name}
+        required={required}
+        maxLength={2000}
+        rows={5}
+        placeholder={placeholder}
+        className={cls}
+      />
     </label>
   );
 }
 
-export function Select({ label, name, children }: { label: string; name: string; children: ReactNode }) {
+export function Select({
+  label,
+  name,
+  children,
+}: {
+  label: string;
+  name: string;
+  children: ReactNode;
+}) {
   return (
     <label className="block text-sm font-medium">
       {label}
-      <select name={name} className={cls}>{children}</select>
+      <select name={name} className={cls}>
+        {children}
+      </select>
     </label>
   );
 }

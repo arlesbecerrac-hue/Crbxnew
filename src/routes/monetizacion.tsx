@@ -8,9 +8,15 @@ export const Route = createFileRoute("/monetizacion")({
   head: () => ({
     meta: [
       { title: "Monetización — CRBX Agencia de TikTok LIVE" },
-      { name: "description", content: "Cómo funcionan los regalos, diamantes e incentivos de TikTok LIVE con CRBX." },
+      {
+        name: "description",
+        content: "Cómo funcionan los regalos, diamantes e incentivos de TikTok LIVE con CRBX.",
+      },
       { property: "og:title", content: "Monetización — CRBX Agencia de TikTok LIVE" },
-      { property: "og:description", content: "Cómo funcionan los regalos, diamantes e incentivos de TikTok LIVE con CRBX." },
+      {
+        property: "og:description",
+        content: "Cómo funcionan los regalos, diamantes e incentivos de TikTok LIVE con CRBX.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -33,7 +39,8 @@ function MonetizacionPage() {
                 aspect="vertical"
               />
               <p className="mt-3 text-center text-xs text-muted-foreground">
-                Demostración de lluvia de regalos virtuales, multiplicadores y diamantes en TikTok LIVE.
+                Demostración de lluvia de regalos virtuales, multiplicadores y diamantes en TikTok
+                LIVE.
               </p>
             </div>
           </div>
@@ -45,10 +52,10 @@ function MonetizacionPage() {
               Regalos, diamantes e ingresos reales
             </h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
-              En TikTok LIVE tu audiencia te apoya con regalos virtuales que se
-              convierten en diamantes y luego en dinero en tu cuenta bancaria. Como parte de CRBX
-              accedes a incentivos adicionales oficiales de la plataforma y a metas
-              mensuales que premian tu constancia.
+              En TikTok LIVE tu audiencia te apoya con regalos virtuales que se convierten en
+              diamantes y luego en dinero en tu cuenta bancaria. Como parte de CRBX accedes a
+              incentivos adicionales oficiales de la plataforma y a metas mensuales que premian tu
+              constancia.
             </p>
             <ul className="mt-7 space-y-4">
               {[

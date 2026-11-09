@@ -43,11 +43,36 @@ export const Route = createFileRoute("/contacto")({
 });
 
 const motivosContacto = [
-  { id: "Marcas y Patrocinios", label: "Marcas y Patrocinios", icon: Briefcase, desc: "Campañas con nuestros streamers" },
-  { id: "Alianzas Comerciales", label: "Alianzas Comerciales", icon: Handshake, desc: "Convenios, agencias y eventos" },
-  { id: "Soporte Creador Activo", label: "Soporte Creador Activo", icon: Headphones, desc: "Atención para miembros CRBX" },
-  { id: "Prensa y Medios", label: "Prensa y Medios", icon: Newspaper, desc: "Entrevistas y comunicados" },
-  { id: "Consulta General", label: "Consulta General", icon: HelpCircle, desc: "Información institucional" },
+  {
+    id: "Marcas y Patrocinios",
+    label: "Marcas y Patrocinios",
+    icon: Briefcase,
+    desc: "Campañas con nuestros streamers",
+  },
+  {
+    id: "Alianzas Comerciales",
+    label: "Alianzas Comerciales",
+    icon: Handshake,
+    desc: "Convenios, agencias y eventos",
+  },
+  {
+    id: "Soporte Creador Activo",
+    label: "Soporte Creador Activo",
+    icon: Headphones,
+    desc: "Atención para miembros CRBX",
+  },
+  {
+    id: "Prensa y Medios",
+    label: "Prensa y Medios",
+    icon: Newspaper,
+    desc: "Entrevistas y comunicados",
+  },
+  {
+    id: "Consulta General",
+    label: "Consulta General",
+    icon: HelpCircle,
+    desc: "Información institucional",
+  },
 ];
 
 function ContactoPage() {
@@ -95,7 +120,6 @@ function ContactoPage() {
     <>
       <PageBanner label="Contacto Corporativo" />
       <section className="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-5">
-        
         {/* Canales de atención institucional */}
         <div className="space-y-4 lg:col-span-2">
           <div className="rounded-3xl border border-border bg-card p-6 shadow-sm mb-6">
@@ -103,7 +127,8 @@ function ContactoPage() {
               Atención Institucional
             </h2>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              Canal oficial para empresas, marcas, relaciones públicas y soporte a creadores ya vinculados a CRBX.
+              Canal oficial para empresas, marcas, relaciones públicas y soporte a creadores ya
+              vinculados a CRBX.
             </p>
           </div>
 
@@ -130,7 +155,10 @@ function ContactoPage() {
                 {inner}
               </a>
             ) : (
-              <div key={c.label} className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4">
+              <div
+                key={c.label}
+                className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4"
+              >
                 {inner}
               </div>
             );
@@ -146,7 +174,8 @@ function ContactoPage() {
               </div>
               <h3 className="text-2xl font-bold text-foreground">¡Mensaje Enviado con Éxito!</h3>
               <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground leading-relaxed">
-                Hemos recibido tu solicitud sobre <strong>{selectedMotivo}</strong>. Nuestro equipo de gestión se comunicará contigo vía {canalRespuesta} en breve.
+                Hemos recibido tu solicitud sobre <strong>{selectedMotivo}</strong>. Nuestro equipo
+                de gestión se comunicará contigo vía {canalRespuesta} en breve.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
@@ -156,7 +185,10 @@ function ContactoPage() {
               </button>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-6 rounded-3xl border border-border bg-card p-7 sm:p-8 shadow-xl">
+            <form
+              onSubmit={onSubmit}
+              className="space-y-6 rounded-3xl border border-border bg-card p-7 sm:p-8 shadow-xl"
+            >
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-3">
                   Motivo de contacto *
@@ -176,14 +208,20 @@ function ContactoPage() {
                             : "border-border bg-background/50 hover:bg-background hover:border-border/80"
                         }`}
                       >
-                        <div className={`mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg ${active ? "bg-live-cyan text-black" : "bg-muted text-muted-foreground"}`}>
+                        <div
+                          className={`mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg ${active ? "bg-live-cyan text-black" : "bg-muted text-muted-foreground"}`}
+                        >
                           <Icon className="size-4" />
                         </div>
                         <div>
-                          <p className={`text-xs font-semibold ${active ? "text-foreground font-bold" : "text-foreground"}`}>
+                          <p
+                            className={`text-xs font-semibold ${active ? "text-foreground font-bold" : "text-foreground"}`}
+                          >
                             {m.label}
                           </p>
-                          <p className="text-[11px] text-muted-foreground mt-0.5 leading-tight">{m.desc}</p>
+                          <p className="text-[11px] text-muted-foreground mt-0.5 leading-tight">
+                            {m.desc}
+                          </p>
                         </div>
                       </button>
                     );
@@ -192,13 +230,38 @@ function ContactoPage() {
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Nombre del contacto *" name="nombre" required maxLength={100} placeholder="Ej. Roberto Gómez" />
-                <Field label="Empresa u Organización" name="empresa" maxLength={100} placeholder="Ej. Agencia / Marca / Canal" />
+                <Field
+                  label="Nombre del contacto *"
+                  name="nombre"
+                  required
+                  maxLength={100}
+                  placeholder="Ej. Roberto Gómez"
+                />
+                <Field
+                  label="Empresa u Organización"
+                  name="empresa"
+                  maxLength={100}
+                  placeholder="Ej. Agencia / Marca / Canal"
+                />
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
-                <Field label="Correo electrónico *" name="email" type="email" required maxLength={255} placeholder="contacto@empresa.com" />
-                <Field label="Teléfono / WhatsApp *" name="telefono" type="tel" required maxLength={30} placeholder="+51 900 000 000" />
+                <Field
+                  label="Correo electrónico *"
+                  name="email"
+                  type="email"
+                  required
+                  maxLength={255}
+                  placeholder="contacto@empresa.com"
+                />
+                <Field
+                  label="Teléfono / WhatsApp *"
+                  name="telefono"
+                  type="tel"
+                  required
+                  maxLength={30}
+                  placeholder="+51 900 000 000"
+                />
               </div>
 
               {/* Selector de medio preferido de respuesta */}
@@ -227,8 +290,19 @@ function ContactoPage() {
                 </div>
               </div>
 
-              <Field label="Asunto de la solicitud *" name="asunto" required maxLength={150} placeholder="Ej. Alianza comercial para campaña de directos" />
-              <Area label="Mensaje detallado *" name="mensaje" required placeholder="Describe tu propuesta, objetivo o consulta institucional..." />
+              <Field
+                label="Asunto de la solicitud *"
+                name="asunto"
+                required
+                maxLength={150}
+                placeholder="Ej. Alianza comercial para campaña de directos"
+              />
+              <Area
+                label="Mensaje detallado *"
+                name="mensaje"
+                required
+                placeholder="Describe tu propuesta, objetivo o consulta institucional..."
+              />
 
               <button
                 disabled={loading}

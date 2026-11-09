@@ -188,7 +188,9 @@ function PostularPage() {
     const parsed = postularSchema.safeParse(rawData);
     if (!parsed.success) {
       const firstIssue = parsed.error.issues[0];
-      toast.error(firstIssue?.message || "Por favor completa los campos obligatorios del formulario.");
+      toast.error(
+        firstIssue?.message || "Por favor completa los campos obligatorios del formulario.",
+      );
       return;
     }
 
@@ -252,7 +254,8 @@ function PostularPage() {
 
             <div className="p-6 sm:p-10 space-y-6">
               <p className="text-sm text-foreground/90 leading-relaxed">
-                Gracias por postularte para formar parte de la familia <strong>CRBX Agencia</strong> como creador oficial de <strong>TikTok LIVE</strong>.
+                Gracias por postularte para formar parte de la familia <strong>CRBX Agencia</strong>{" "}
+                como creador oficial de <strong>TikTok LIVE</strong>.
               </p>
 
               {/* Categorías postuladas */}
@@ -286,7 +289,8 @@ function PostularPage() {
                       <strong className="text-foreground">Revisión de tu cuenta:</strong>
                       <p className="text-muted-foreground mt-0.5">
                         Nuestro equipo de reclutamiento analizará tu perfil de TikTok (
-                        <span className="font-semibold text-live-cyan">{submittedData.tiktok}</span>).
+                        <span className="font-semibold text-live-cyan">{submittedData.tiktok}</span>
+                        ).
                       </p>
                     </div>
                   </div>
@@ -299,7 +303,9 @@ function PostularPage() {
                       <strong className="text-foreground">Contacto directo:</strong>
                       <p className="text-muted-foreground mt-0.5">
                         Te escribiremos por WhatsApp al{" "}
-                        <span className="font-semibold text-purple-400">{submittedData.telefono}</span>{" "}
+                        <span className="font-semibold text-purple-400">
+                          {submittedData.telefono}
+                        </span>{" "}
                         o correo en un plazo de <strong>24 a 48 horas</strong>.
                       </p>
                     </div>
@@ -312,7 +318,8 @@ function PostularPage() {
                     <div className="text-sm">
                       <strong className="text-foreground">Invitación oficial:</strong>
                       <p className="text-muted-foreground mt-0.5">
-                        Recibirás la invitación oficial de CRBX directamente dentro de tu aplicación de TikTok en la sección de <strong>Centro de Creadores LIVE</strong>.
+                        Recibirás la invitación oficial de CRBX directamente dentro de tu aplicación
+                        de TikTok en la sección de <strong>Centro de Creadores LIVE</strong>.
                       </p>
                     </div>
                   </div>
@@ -322,7 +329,9 @@ function PostularPage() {
               <div className="rounded-2xl border border-live-cyan/30 bg-live-cyan/5 p-4 text-xs sm:text-sm text-foreground/90 leading-relaxed flex items-start gap-3">
                 <ShieldCheck className="size-5 shrink-0 text-live-cyan mt-0.5" />
                 <div>
-                  <strong>Recuerda que unirte a CRBX es 100% gratuito.</strong> Nunca te pediremos contraseñas de tu cuenta ni te cobraremos ningún tipo de comisión sobre tus diamantes (conservas el 100% de lo que ganas).
+                  <strong>Recuerda que unirte a CRBX es 100% gratuito.</strong> Nunca te pediremos
+                  contraseñas de tu cuenta ni te cobraremos ningún tipo de comisión sobre tus
+                  diamantes (conservas el 100% de lo que ganas).
                 </div>
               </div>
 
@@ -330,9 +339,7 @@ function PostularPage() {
                 <p className="font-bold text-foreground text-sm">
                   ¡Nos vemos pronto en los directos!
                 </p>
-                <p className="text-xs text-muted-foreground mt-0.5">
-                  El equipo de CRBX Agencia
-                </p>
+                <p className="text-xs text-muted-foreground mt-0.5">El equipo de CRBX Agencia</p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
@@ -383,7 +390,9 @@ function PostularPage() {
                     <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-live-cyan/20 text-live-cyan">
                       <Check className="size-3" />
                     </span>
-                    <span className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{r}</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                      {r}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -393,25 +402,55 @@ function PostularPage() {
             <div className="rounded-3xl border border-live-pink/30 bg-live-pink/5 p-5 text-xs text-foreground/90 leading-relaxed flex items-start gap-3">
               <ShieldCheck className="size-5 shrink-0 text-live-pink mt-0.5" />
               <div>
-                <strong>Cero comisiones:</strong> Conservas el 100% de los diamantes y regalos que envían tus seguidores. CRBX no te cobra ninguna tarifa por pertenecer a la agencia.
+                <strong>Cero comisiones:</strong> Conservas el 100% de los diamantes y regalos que
+                envían tus seguidores. CRBX no te cobra ninguna tarifa por pertenecer a la agencia.
               </div>
             </div>
           </div>
 
           {/* Columna Principal: Formulario con UI Customizada */}
           <div className="lg:col-span-3">
-            <form onSubmit={onSubmit} className="space-y-7 rounded-3xl border border-border bg-card p-7 sm:p-8 shadow-xl">
-              
+            <form
+              onSubmit={onSubmit}
+              className="space-y-7 rounded-3xl border border-border bg-card p-7 sm:p-8 shadow-xl"
+            >
               {/* Datos Personales */}
               <div>
                 <h4 className="text-xs font-semibold uppercase tracking-wider text-live-cyan mb-3">
                   1. Datos de Contacto
                 </h4>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label="Nombre completo *" name="nombre" required maxLength={100} placeholder="Ej. Carlos Mendoza" />
-                  <Field label="Edad *" name="edad" type="number" required maxLength={3} placeholder="18" />
-                  <Field label="Correo electrónico *" name="email" type="email" required maxLength={255} placeholder="tu@correo.com" />
-                  <Field label="Teléfono / WhatsApp *" name="telefono" type="tel" required maxLength={30} placeholder="+51 900 000 000" />
+                  <Field
+                    label="Nombre completo *"
+                    name="nombre"
+                    required
+                    maxLength={100}
+                    placeholder="Ej. Carlos Mendoza"
+                  />
+                  <Field
+                    label="Edad *"
+                    name="edad"
+                    type="number"
+                    required
+                    maxLength={3}
+                    placeholder="18"
+                  />
+                  <Field
+                    label="Correo electrónico *"
+                    name="email"
+                    type="email"
+                    required
+                    maxLength={255}
+                    placeholder="tu@correo.com"
+                  />
+                  <Field
+                    label="Teléfono / WhatsApp *"
+                    name="telefono"
+                    type="tel"
+                    required
+                    maxLength={30}
+                    placeholder="+51 900 000 000"
+                  />
                 </div>
               </div>
 
@@ -459,8 +498,18 @@ function PostularPage() {
                   2. Tu Cuenta de TikTok
                 </h4>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label="Usuario de TikTok *" name="tiktok" required placeholder="@tuusuario" />
-                  <Field label="Número aproximado de seguidores" name="seguidores" maxLength={30} placeholder="Ej. 1.2K, 15K, 100K" />
+                  <Field
+                    label="Usuario de TikTok *"
+                    name="tiktok"
+                    required
+                    placeholder="@tuusuario"
+                  />
+                  <Field
+                    label="Número aproximado de seguidores"
+                    name="seguidores"
+                    maxLength={30}
+                    placeholder="Ej. 1.2K, 15K, 100K"
+                  />
                 </div>
               </div>
 
@@ -494,8 +543,12 @@ function PostularPage() {
                             ✓
                           </span>
                         )}
-                        <Icon className={`size-5 mb-1.5 ${active ? "text-live-pink" : "text-muted-foreground"}`} />
-                        <span className={`text-xs font-semibold ${active ? "text-foreground font-bold" : "text-foreground"}`}>
+                        <Icon
+                          className={`size-5 mb-1.5 ${active ? "text-live-pink" : "text-muted-foreground"}`}
+                        />
+                        <span
+                          className={`text-xs font-semibold ${active ? "text-foreground font-bold" : "text-foreground"}`}
+                        >
                           {c.label}
                         </span>
                       </button>
@@ -523,10 +576,14 @@ function PostularPage() {
                             : "border-border bg-background/50 hover:bg-background text-muted-foreground"
                         }`}
                       >
-                        <p className={`text-xs font-bold ${active ? "text-foreground" : "text-foreground"}`}>
+                        <p
+                          className={`text-xs font-bold ${active ? "text-foreground" : "text-foreground"}`}
+                        >
                           {exp.label}
                         </p>
-                        <p className="text-[11px] text-muted-foreground mt-0.5 leading-tight">{exp.desc}</p>
+                        <p className="text-[11px] text-muted-foreground mt-0.5 leading-tight">
+                          {exp.desc}
+                        </p>
                       </button>
                     );
                   })}
@@ -552,7 +609,9 @@ function PostularPage() {
                             : "border-border bg-background/50 hover:bg-background text-muted-foreground"
                         }`}
                       >
-                        <span className={`block text-xs font-bold ${active ? "text-foreground" : "text-foreground"}`}>
+                        <span
+                          className={`block text-xs font-bold ${active ? "text-foreground" : "text-foreground"}`}
+                        >
                           {disp.label}
                         </span>
                         <span className="text-[11px] text-muted-foreground mt-0.5 block">

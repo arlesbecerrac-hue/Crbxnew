@@ -10,9 +10,15 @@ export const Route = createFileRoute("/nosotros")({
   head: () => ({
     meta: [
       { title: "Nosotros — CRBX Agencia de TikTok LIVE" },
-      { name: "description", content: "Conoce CRBX, la agencia de TikTok LIVE de Carbe Global Corp SAC en Lima, Perú." },
+      {
+        name: "description",
+        content: "Conoce CRBX, la agencia de TikTok LIVE de Carbe Global Corp SAC en Lima, Perú.",
+      },
       { property: "og:title", content: "Nosotros — CRBX Agencia de TikTok LIVE" },
-      { property: "og:description", content: "Conoce CRBX, la agencia de TikTok LIVE de Carbe Global Corp SAC en Lima, Perú." },
+      {
+        property: "og:description",
+        content: "Conoce CRBX, la agencia de TikTok LIVE de Carbe Global Corp SAC en Lima, Perú.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -34,17 +40,15 @@ function NosotrosPage() {
               Una agencia peruana para creadores de toda Latinoamérica
             </h2>
             <p className="mt-5 leading-relaxed text-muted-foreground">
-              CRBX es la agencia de TikTok LIVE de Carbe Global Corp SAC, una
-              empresa peruana constituida con RUC 20616178769. Nacimos en Lima
-              con una convicción: el talento latinoamericano merece
-              acompañamiento profesional para vivir de las transmisiones en
+              CRBX es la agencia de TikTok LIVE de Carbe Global Corp SAC, una empresa peruana
+              constituida con RUC 20616178769. Nacimos en Lima con una convicción: el talento
+              latinoamericano merece acompañamiento profesional para vivir de las transmisiones en
               vivo.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Trabajamos de la mano con cada creador: revisamos métricas,
-              planificamos contenido, organizamos batallas y resolvemos dudas
-              todos los días. No somos un número más en tu cuenta; somos tu
-              equipo.
+              Trabajamos de la mano con cada creador: revisamos métricas, planificamos contenido,
+              organizamos batallas y resolvemos dudas todos los días. No somos un número más en tu
+              cuenta; somos tu equipo.
             </p>
             <div className="mt-7 flex items-center gap-3 text-sm text-muted-foreground">
               <MapPin className="size-4 shrink-0 text-live-pink" />

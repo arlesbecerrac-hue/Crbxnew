@@ -10,9 +10,15 @@ export const Route = createFileRoute("/preguntas")({
   head: () => ({
     meta: [
       { title: "Preguntas frecuentes — CRBX Agencia de TikTok LIVE" },
-      { name: "description", content: "Respuestas a las dudas más comunes sobre la agencia CRBX de TikTok LIVE." },
+      {
+        name: "description",
+        content: "Respuestas a las dudas más comunes sobre la agencia CRBX de TikTok LIVE.",
+      },
       { property: "og:title", content: "Preguntas frecuentes — CRBX Agencia de TikTok LIVE" },
-      { property: "og:description", content: "Respuestas a las dudas más comunes sobre la agencia CRBX de TikTok LIVE." },
+      {
+        property: "og:description",
+        content: "Respuestas a las dudas más comunes sobre la agencia CRBX de TikTok LIVE.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -41,9 +47,7 @@ function PreguntasPage() {
                 <summary className="cursor-pointer list-none text-base font-semibold marker:hidden">
                   {p.pregunta}
                 </summary>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {p.respuesta}
-                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.respuesta}</p>
               </details>
             ))}
           </div>

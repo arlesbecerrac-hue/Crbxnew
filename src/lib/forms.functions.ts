@@ -83,5 +83,13 @@ export const enviarPostulacion = createServerFn({ method: "POST" })
       console.error("Error enviando confirmación al postulante:", e);
     }
 
-    return { ok: true, datos: { nombre: data.nombre, tiktok: data.tiktok, telefono: data.telefono, email: data.email } };
+    return {
+      ok: true,
+      datos: {
+        nombre: data.nombre,
+        tiktok: data.tiktok,
+        telefono: data.telefono,
+        email: data.email,
+      },
+    };
   });

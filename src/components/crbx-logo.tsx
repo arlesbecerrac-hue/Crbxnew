@@ -62,15 +62,31 @@ export function CrbxLogo({ className = "size-10", size }: CrbxLogoProps) {
       <g filter="url(#badgeShadow)">
         {/* Outer Chrome Bezel */}
         <circle cx="250" cy="250" r="235" fill="url(#ringGrad)" stroke="#1E293B" strokeWidth="4" />
-        
+
         {/* Neon Light Strip */}
-        <circle cx="250" cy="250" r="226" fill="none" stroke="url(#neonRim)" strokeWidth="3" opacity="0.9" />
+        <circle
+          cx="250"
+          cy="250"
+          r="226"
+          fill="none"
+          stroke="url(#neonRim)"
+          strokeWidth="3"
+          opacity="0.9"
+        />
 
         {/* Inner Black Circular Face */}
         <circle cx="250" cy="250" r="220" fill="url(#discGrad)" stroke="#0F172A" strokeWidth="3" />
-        
+
         {/* Subtle Inner Accent Rim */}
-        <circle cx="250" cy="250" r="216" fill="none" stroke="#FFFFFF" strokeWidth="1" opacity="0.15" />
+        <circle
+          cx="250"
+          cy="250"
+          r="216"
+          fill="none"
+          stroke="#FFFFFF"
+          strokeWidth="1"
+          opacity="0.15"
+        />
       </g>
 
       {/* TOP CROWN (Silver Chrome 3-point Crown) */}
@@ -83,21 +99,9 @@ export function CrbxLogo({ className = "size-10", size }: CrbxLogoProps) {
           strokeLinejoin="round"
         />
         {/* Crown 3D Facet Highlight */}
-        <path
-          d="M 250 85 L 215 145 L 250 185 L 285 145 Z"
-          fill="#FFFFFF"
-          opacity="0.25"
-        />
-        <path
-          d="M 160 115 L 215 145 L 175 185 Z"
-          fill="#475569"
-          opacity="0.3"
-        />
-        <path
-          d="M 340 115 L 285 145 L 325 185 Z"
-          fill="#475569"
-          opacity="0.3"
-        />
+        <path d="M 250 85 L 215 145 L 250 185 L 285 145 Z" fill="#FFFFFF" opacity="0.25" />
+        <path d="M 160 115 L 215 145 L 175 185 Z" fill="#475569" opacity="0.3" />
+        <path d="M 340 115 L 285 145 L 325 185 Z" fill="#475569" opacity="0.3" />
         {/* Crown Base Band */}
         <path
           d="M 170 183 Q 250 195 330 183 L 327 195 Q 250 207 173 195 Z"
@@ -191,7 +195,7 @@ export function CrbxLogo({ className = "size-10", size }: CrbxLogoProps) {
             stroke="url(#chromeGrad)"
             strokeWidth="2.5"
           />
-          
+
           {/* Red Recording Dot */}
           <circle cx="22" cy="19" r="6.5" fill="#FE2C55" />
           <circle cx="22" cy="19" r="3" fill="#FFFFFF" opacity="0.6" />
